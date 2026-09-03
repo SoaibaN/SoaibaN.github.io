@@ -9,7 +9,7 @@
 export const profile = {
   name: "Soaiba Nuzhat",
   tagline:
-    "I engineer multi-agent AI systems that reason reliably over messy, real-world data.",
+    "I engineer multi-agent AI systems that reason reliably over real-world data.",
   status: "New York, NY",
   email: "sn3093@columbia.edu",
   phone: "614-906-7182",
