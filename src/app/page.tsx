@@ -142,15 +142,20 @@ export default function Home() {
       {/* ========================= SKILLS MARQUEE ===================== */}
       <section
         aria-label="Skills and tools"
-        className="border-b border-line py-8 sm:py-10"
+        className="border-b border-line py-4 sm:py-5"
       >
         <SkillsMarquee
-          rows={skillGroups.map((g) => ({ label: g.label, items: g.items }))}
+          rows={[
+            {
+              label: "Skills and tools",
+              items: skillGroups.flatMap((group) => group.items),
+            },
+          ]}
         />
       </section>
 
       {/* ========================== EXPERIENCE ======================== */}
-      <section aria-labelledby="experience-title" className="py-20 sm:py-28">
+      <section aria-labelledby="experience-title" className="py-10 sm:py-14">
         <div className="mb-10 flex items-end justify-between gap-5 sm:mb-14">
           <div>
             <span className="meta-label text-accent">02 / Experience</span>
@@ -169,7 +174,7 @@ export default function Home() {
       </section>
 
       {/* =========================== EDUCATION ======================== */}
-      <section aria-labelledby="education-title" className="py-20 sm:py-28">
+      <section aria-labelledby="education-title" className="py-10 sm:py-14">
         <div className="mb-10 flex items-end justify-between gap-5 sm:mb-14">
           <div>
             <span className="meta-label text-accent">03 / Where I studied</span>
@@ -190,7 +195,7 @@ export default function Home() {
       {/* ========================= CONTACT CTA ======================== */}
       <section
         aria-labelledby="contact-title"
-        className="contact-card my-16 px-6 py-16 text-center sm:px-12 sm:py-20"
+        className="contact-card my-8 px-6 py-16 text-center sm:px-12 sm:py-20"
       >
         <span className="meta-label text-accent">Reach out to me to chat!</span>
         <h2
