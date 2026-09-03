@@ -35,7 +35,7 @@ function ExperienceEntry({
     <li className="border-t border-ink last:border-b">
       <article>
         <h3 id={headingId} className="sr-only">
-          {experience.institution}
+          {experience.role}
         </h3>
         <button
           id={triggerId}
@@ -51,13 +51,13 @@ function ExperienceEntry({
 
           <span className="min-w-0">
             <span className="mb-2 block font-mono text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-muted">
-              {String(index + 1).padStart(2, "0")} / Institution
+              {String(index + 1).padStart(2, "0")} / Role
             </span>
             <span className="block text-[clamp(1.35rem,3vw,2.45rem)] font-semibold leading-[0.95] tracking-[-0.04em]">
-              {experience.institution}
+              {experience.role}
             </span>
             <span className="mt-3 block text-sm font-semibold sm:text-base">
-              {experience.role}
+              {experience.institution}
             </span>
             <span className="mt-1 block text-xs leading-relaxed text-muted sm:text-sm">
               {experience.team}
