@@ -48,25 +48,6 @@ export default function ProjectsPage() {
           </figure>
         </div>
 
-        <div className="projects-discipline-strip" aria-label="Project disciplines">
-          <div className="projects-discipline-track">
-            {[0, 1].map((copy) => (
-              <div key={copy} className="flex shrink-0 items-center gap-3 pr-3" aria-hidden={copy === 1}>
-                {[
-                  "Agentic AI",
-                  "Parallel Systems",
-                  "Machine Learning",
-                  "Computer Architecture",
-                  "Computational Biology",
-                ].map((label) => (
-                  <span key={`${copy}-${label}`} className="projects-discipline-item">
-                    {label}
-                  </span>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
       <section

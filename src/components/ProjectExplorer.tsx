@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { KeyboardEvent } from "react";
 import type { ProjectEntry } from "@/data/resume";
 
@@ -14,6 +14,23 @@ export default function ProjectExplorer({
   const [detailsOpen, setDetailsOpen] = useState(false);
   const projectButtons = useRef<Array<HTMLButtonElement | null>>([]);
   const selectedProject = projects[selectedIndex];
+
+  useEffect(() => {
+    function selectFromHash() {
+      const match = window.location.hash.match(/^#project-tab-(\d+)$/);
+      if (!match) return;
+
+      const index = Number(match[1]);
+      if (index >= 0 && index < projects.length) {
+        setSelectedIndex(index);
+        setDetailsOpen(false);
+      }
+    }
+
+    selectFromHash();
+    window.addEventListener("hashchange", selectFromHash);
+    return () => window.removeEventListener("hashchange", selectFromHash);
+  }, [projects.length]);
 
   if (!selectedProject) return null;
 

@@ -1,13 +1,19 @@
 import Image from "next/image";
-import SkillsMarquee from "@/components/SkillsMarquee";
 import ExperienceAccordion from "@/components/ExperienceAccordion";
 import EducationFlipCards from "@/components/EducationFlipCards";
 import {
   profile,
-  skillGroups,
   education,
   experience,
 } from "@/data/resume";
+
+const projectDisciplines = [
+  { label: "Agentic AI", projectIndex: 0 },
+  { label: "Parallel Systems", projectIndex: 1 },
+  { label: "Machine Learning", projectIndex: 0 },
+  { label: "Computer Architecture", projectIndex: 1 },
+  { label: "Computational Biology", projectIndex: 2 },
+];
 
 export default function Home() {
   return (
@@ -137,21 +143,29 @@ export default function Home() {
             </nav>
           </div>
         </div>
-      </section>
 
-      {/* ========================= SKILLS MARQUEE ===================== */}
-      <section
-        aria-label="Skills and tools"
-        className="border-b border-line py-4 sm:py-5"
-      >
-        <SkillsMarquee
-          rows={[
-            {
-              label: "Skills and tools",
-              items: skillGroups.flatMap((group) => group.items),
-            },
-          ]}
-        />
+        <nav className="projects-discipline-strip" aria-label="Explore projects by discipline">
+          <div className="projects-discipline-track">
+            {[0, 1].map((copy) => (
+              <div
+                key={copy}
+                className="flex shrink-0 items-center gap-3 pr-3"
+                aria-hidden={copy === 1}
+              >
+                {projectDisciplines.map(({ label, projectIndex }) => (
+                  <a
+                    key={`${copy}-${label}`}
+                    href={`/projects/#project-tab-${projectIndex}`}
+                    className="projects-discipline-item"
+                    tabIndex={copy === 1 ? -1 : undefined}
+                  >
+                    {label}
+                  </a>
+                ))}
+              </div>
+            ))}
+          </div>
+        </nav>
       </section>
 
       {/* ========================== EXPERIENCE ======================== */}

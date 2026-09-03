@@ -862,7 +862,8 @@ body {
   animation: projects-discipline-scroll 28s linear infinite;
 }
 
-.projects-discipline-strip:hover .projects-discipline-track {
+.projects-discipline-strip:hover .projects-discipline-track,
+.projects-discipline-strip:focus-within .projects-discipline-track {
   animation-play-state: paused;
 }
 
@@ -884,7 +885,13 @@ body {
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.015em;
+  text-decoration: none;
   white-space: nowrap;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
 }
 
 .projects-discipline-item::before {
@@ -895,6 +902,25 @@ body {
   background: var(--accent);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 14%, transparent);
   content: "";
+}
+
+.projects-discipline-item:hover,
+.projects-discipline-item:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+  transform: translateY(-2px);
+}
+
+.projects-discipline-item:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.projects-discipline-item:hover::before,
+.projects-discipline-item:focus-visible::before {
+  background: currentColor;
+  box-shadow: none;
 }
 
 .project-explorer {
@@ -1850,6 +1876,7 @@ body {
    Reduced-motion: freeze marquee + reveals into static states
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
+  .projects-discipline-track,
   .marquee-track,
   .marquee-track.reverse {
     animation: none;
@@ -1857,6 +1884,9 @@ body {
     transform: none;
   }
   .marquee-mask {
+    overflow-x: auto;
+  }
+  .projects-discipline-strip {
     overflow-x: auto;
   }
   .reveal,
