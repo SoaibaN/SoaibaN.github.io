@@ -173,7 +173,7 @@ export const experience: ExperienceEntry[] = [
   },
   {
     institution: "University of Miami",
-    role: "Research Intern",
+    role: "Machine Learning Research Intern",
     team: "Physics REU — Prakash Lab",
     period: "Summer 2025",
     logo: "/images/experience/miami.png",
