@@ -121,7 +121,9 @@ export default function PersonalPage() {
                   </span>
                 ) : null}
               </div>
-              <p className="mt-1 font-medium text-ink/90">{item.org}</p>
+              <p className="mt-1 font-medium text-ink/90">
+                {item.position ? `${item.position} · ${item.org}` : item.org}
+              </p>
               <p className="mt-3 text-sm leading-relaxed text-muted">
                 {item.summary}
               </p>

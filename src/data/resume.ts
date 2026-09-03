@@ -263,6 +263,7 @@ export const projects: ProjectEntry[] = [
 export type LeadershipEntry = {
   role: string;
   org: string;
+  position?: string;
   period?: string;
   summary: string;
 };
@@ -278,6 +279,8 @@ export const leadership: LeadershipEntry[] = [
   {
     role: "Club Bangla",
     org: "Columbia University",
+    position: "Social Chair",
+    period: "Sep 2023 – Present",
     summary:
       "A cultural club on campus that brings Bengali students together to cultivate community and celebrate Bengali culture at Columbia.",
   },
