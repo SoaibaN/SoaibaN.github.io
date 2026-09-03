@@ -206,6 +206,7 @@ export type ProjectEntry = {
 export const projects: ProjectEntry[] = [
   {
     title: "Agentic AI Stock Recommender",
+    period: "Aug 2025 – Dec 2025",
     description:
       "An agentic stock-analysis system that coordinates specialist agents for fundamental, technical, and news analysis, then synthesizes their findings into grounded buy, sell, or hold recommendations. A retrieval pipeline supplies long-horizon market and financial data from four institutional sources to support more consistent explanations.",
     bullets: [
@@ -227,6 +228,7 @@ export const projects: ProjectEntry[] = [
     title:
       "Cost-Efficient Optimization of Parallel Radix Sort Using Architecture-Aware Techniques",
     indexTitle: "Radix Sort Optimization Through Computer Architecture",
+    period: "Nov 2025 – Dec 2025",
     description:
       "An architecture-aware optimization of parallel LSD radix sort that combines cache-conscious blocking, thread placement, hugepages, and compiler tuning to accelerate memory-bound sorting on AMD EPYC hardware.",
     bullets: [
@@ -246,6 +248,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     title: "MRE Simulation",
+    period: "Jun 2024 – Nov 2024",
     description:
       "Developed a MATLAB-based GUI to simulate Magnetic Resonance Elastography (MRE) brain scans and apply two correction (Topup and Fugue) methods for distorted brain scans.",
     bullets: [],
