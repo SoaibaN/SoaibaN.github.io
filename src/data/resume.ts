@@ -261,6 +261,26 @@ export const projects: ProjectEntry[] = [
     imageWidth: 565,
     imageHeight: 376,
   },
+  {
+    title: "KV Cache Compression for LLM Inference",
+    period: "Sep 2026",
+    description:
+      "Implemented and evaluated three KV-cache compression strategies—sliding-window eviction, cumulative-attention importance selection, and per-vector int8 quantization—inside an explicit TinyLlama inference loop. Benchmarked memory, decode latency, and output-quality trade-offs against an uncompressed baseline.",
+    bullets: [
+      "Bounded KV memory with a per-layer sliding window and an attention-score-based top-k cache, reducing cache storage by approximately 75% at 255 prompt tokens with a 64-token budget.",
+      "Built per-token, per-head symmetric int8 K/V quantization with float32 scales, reducing total cache memory by 46.9% while retaining the full sequence and long-range recall.",
+      "Instrumented cache bytes, decode latency, and token-level output divergence across three prompt lengths on TinyLlama-1.1B, including focused tests for storage release, K/V alignment, quantization error, and metadata accounting.",
+    ],
+    tags: ["Python", "PyTorch", "LLM Inference", "KV Cache", "Model Compression"],
+    repoUrl: "https://github.com/SoaibaN/kv-cache-compression",
+    imageUrl: "/images/projects/kv-cache-memory.svg",
+    imageAlt:
+      "Line chart comparing stored KV-cache memory across prompt lengths for uncompressed, sliding-window, attention-importance, and int8-quantized caches.",
+    imageCaption:
+      "Sliding-window and attention-importance eviction flatten memory after the token budget, while int8 quantization scales at roughly half the uncompressed cache size.",
+    imageWidth: 1100,
+    imageHeight: 350,
+  },
 ];
 
 export type LeadershipEntry = {

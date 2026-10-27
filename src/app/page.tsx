@@ -13,6 +13,7 @@ const projectDisciplines = [
   { label: "Machine Learning", projectIndex: 0 },
   { label: "Computer Architecture", projectIndex: 1 },
   { label: "Computational Biology", projectIndex: 2 },
+  { label: "ML Systems", projectIndex: 3 },
 ];
 
 export default function Home() {
